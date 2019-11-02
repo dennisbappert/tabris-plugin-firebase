@@ -19,7 +19,7 @@ class NotificationOpenedReceiver : BroadcastReceiver() {
 
   private fun launchActivity(context: Context, data: Serializable) {
     context.startActivity(createAppIntent(context, data))
-    xcc
+
     // if (!sendDataBroadcast(context, ACTION_LAUNCH_TABRIS_ACTIVITY, data)) {
       // if nobody resolved the action to launch the tabris activity into the foreground
       // we launch the entire app
