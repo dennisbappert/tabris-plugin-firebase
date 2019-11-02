@@ -34,11 +34,11 @@ private const val NOTIFICATION_CHANNEL_DEFAULT = "default"
 class TabrisFirebaseMessagingService : FirebaseMessagingService() {
 
   override fun onMessageReceived(remoteMessage: RemoteMessage) {
-    val intent = Intent(ACTION_MESSAGE).apply { putExtra(EXTRA_DATA, HashMap(remoteMessage.data)) }
-    if (!LocalBroadcastManager.getInstance(applicationContext).sendBroadcast(intent)) {
+    // val intent = Intent(ACTION_MESSAGE).apply { putExtra(EXTRA_DATA, HashMap(remoteMessage.data)) }
+    // if (!LocalBroadcastManager.getInstance(applicationContext).sendBroadcast(intent)) {
       // if nobody consumed the message broadcast the app is in the background
-      showNotification(remoteMessage)
-    }
+    //  showNotification(remoteMessage)
+    // }
   }
 
   private fun showNotification(remoteMessage: RemoteMessage) {
