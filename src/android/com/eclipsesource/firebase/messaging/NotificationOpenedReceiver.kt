@@ -12,7 +12,7 @@ class NotificationOpenedReceiver : BroadcastReceiver() {
   override fun onReceive(context: Context, intent: Intent) {
     val data = intent.getSerializableExtra(EXTRA_DATA)
     
-    context.startActivity(createAppIntent(context, data))
+    //context.startActivity(createAppIntent(context, data))
     
     //if (!sendDataBroadcast(context, ACTION_MESSAGE, data)) {
       // if nobody consumed the data broadcast the app is in the background
