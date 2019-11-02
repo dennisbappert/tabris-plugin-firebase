@@ -18,11 +18,13 @@ class NotificationOpenedReceiver : BroadcastReceiver() {
   }
 
   private fun launchActivity(context: Context, data: Serializable) {
-    if (!sendDataBroadcast(context, ACTION_LAUNCH_TABRIS_ACTIVITY, data)) {
+    context.startActivity(createAppIntent(context, data))
+    
+    // if (!sendDataBroadcast(context, ACTION_LAUNCH_TABRIS_ACTIVITY, data)) {
       // if nobody resolved the action to launch the tabris activity into the foreground
       // we launch the entire app
-      context.startActivity(createAppIntent(context, data))
-    }
+      // context.startActivity(createAppIntent(context, data))
+    // }
   }
 
   private fun sendDataBroadcast(context: Context, action: String, data: Serializable) =
