@@ -33,7 +33,7 @@ class NotificationOpenedReceiver : BroadcastReceiver() {
 
   private fun createAppIntent(context: Context, data: Serializable) =
       context.packageManager.getLaunchIntentForPackage(context.packageName)?.let {
-        it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        // it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         it.putExtra(EXTRA_DATA, data)
       }
 
