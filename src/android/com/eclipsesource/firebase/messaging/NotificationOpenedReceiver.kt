@@ -11,10 +11,13 @@ class NotificationOpenedReceiver : BroadcastReceiver() {
 
   override fun onReceive(context: Context, intent: Intent) {
     val data = intent.getSerializableExtra(EXTRA_DATA)
-    if (!sendDataBroadcast(context, ACTION_MESSAGE, data)) {
+    
+    context.startActivity(createAppIntent(context, data))
+    
+    //if (!sendDataBroadcast(context, ACTION_MESSAGE, data)) {
       // if nobody consumed the data broadcast the app is in the background
-      launchActivity(context, data)
-    }
+    //  launchActivity(context, data)
+    //}
   }
 
   private fun launchActivity(context: Context, data: Serializable) {
