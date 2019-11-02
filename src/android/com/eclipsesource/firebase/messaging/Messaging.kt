@@ -108,10 +108,10 @@ class Messaging(private val scope: ActivityScope) : Events.ActivityStateListener
   private class LaunchTabrisActivityReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-      context.startActivity(Intent(context, TabrisActivity::class.java).apply {
+      //context.startActivity(Intent(context, TabrisActivity::class.java).apply {
         //addFlags(FLAG_ACTIVITY_SINGLE_TOP)
-        putExtra(EXTRA_DATA, intent.getSerializableExtra(EXTRA_DATA))
-      })
+      //  putExtra(EXTRA_DATA, intent.getSerializableExtra(EXTRA_DATA))
+      //})
     }
   }
 
